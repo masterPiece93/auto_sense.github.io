@@ -26,8 +26,7 @@ var ic = -1
 var cc = -1
 var prev_char = null
 search_bar.onkeydown = function(e){
-    p(e)
-    p(`prev_char : ${prev_char}`)
+    
     let key = e.key
     if (pointer == -1){
         prev_char=null
@@ -52,7 +51,6 @@ search_bar.onkeyup = function(e){
     }
     let key = e.key
     if (keyIsValid(key)){
-        p(key)
         
         if (e.keyCode != 8){
             pointer++
@@ -64,9 +62,6 @@ search_bar.onkeyup = function(e){
         }
 
         }
-        p(`pointer ${pointer}`)
-        p(`ic ${ic}`)
-        p(`cc ${cc}`)
         
         if (pointer == 0){
             if (key=='@' || search_bar.value == '@'){
@@ -91,7 +86,6 @@ search_bar.onkeyup = function(e){
         if (pointer < 0){
             tag = null
         }
-        p(`${search_bar.value},${tag}`)
         
         if (e.keyCode != 8){
             prev_char = key
